@@ -1,0 +1,27 @@
+{
+  "name": "pub-quiz-mmo",
+  "version": "1.0.0",
+  "description": "A way of creating and playing pub quizzes remotely.",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonny-bull/pub-quiz-mmo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonny-bull/pub-quiz-mmo/issues"
+  },
+  "homepage": "https://github.com/jonny-bull/pub-quiz-mmo#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.9.5"
+  }
+}
