@@ -1,14 +1,13 @@
-var app = require('express')();
-var http = require('http').createServer(app);
-var io = require('socket.io')(http);
+var express = require('express');
+var app = express();
 
 var routes = require('./app/routes');
+var sockets = require('./app/sockets')(app);
 
 app.set('views', __dirname + '/app/views');
 app.set('view engine', 'ejs');
 
 app.use('/', routes);
+app.use(express.static('public'));
 
-http.listen(3000, function(){
-    console.log('listening on *:3000');
-});
+sockets.listen(3000);
