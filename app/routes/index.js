@@ -51,6 +51,7 @@ router.get( '/quiz-master/slide/:id', ( req, res ) => {
 
 router.get( '/room/:id', ( req, res ) => {
     var roomID = req.params.id;
+    res.render( 'room', { room: roomID } );
     // If user is in an active quiz
         // Great
     // Else

@@ -1,0 +1,18 @@
+<html>
+    <%- include ('partials/header') %>
+    <body>
+        <div class="header">
+            <h1>Room <%= room %></h1>
+        </div>
+        <div class="main">
+            <%- include ('partials/quiz-question', {
+                questionid: "1",
+                questionround: 1,
+                questioncount: 1,
+                questiontext: "How many fingers am I holding up?"
+            } ) %>
+            <%- include ('partials/quiz-answer', { questionid: "1" }) %>
+        </div>
+    </body>
+    <%- include ('partials/footer') %>
+</html>
