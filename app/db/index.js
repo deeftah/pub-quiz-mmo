@@ -18,6 +18,7 @@ module.exports = {
     models: {
         room: require( './schema/room.js' ),
         round: require( './schema/round.js' ),
+        session: require( './schema/session.js' ),
         slide: require( './schema/slide.js' ),
     }
 };
