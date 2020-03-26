@@ -12,6 +12,14 @@
                 questiontext: "How many fingers am I holding up?"
             } ) %>
             <%- include ('partials/quiz-answer', { questionid: "1" }) %>
+            <%- include ('partials/quiz-timer', {questionstart: "0"}) %>
+            <%- include ('partials/quiz-progress', {
+                score: "0", 
+                maxscore: "0",
+                rank: "0", 
+                maxrank: "0",
+
+            }) %>
         </div>
     </body>
     <%- include ('partials/footer') %>
