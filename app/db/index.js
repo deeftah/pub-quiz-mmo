@@ -1,9 +1,7 @@
 var Mongoose = require('mongoose');
 
 // Connect to DB.
-Mongoose.connect( "mongodb://localhost/pub-quiz-mmo", {
-    useMongoClient: true, 
-} );
+Mongoose.connect( "mongodb://localhost/pub-quiz-mmo", { useUnifiedTopology: true, useNewUrlParser: true } );
 
 // Throw error.
 Mongoose.connection.on( 'error', (err) => {
@@ -18,8 +16,8 @@ Mongoose.Promise = global.Promise;
 module.exports = {
     Mongoose,
     models: {
-        room: require( './schemas/room.js' ),
-        round: require( './schemas/round.js' ),
-        slide: require( './schemas/slide.js' ),
+        room: require( './schema/room.js' ),
+        round: require( './schema/round.js' ),
+        slide: require( './schema/slide.js' ),
     }
 };

@@ -1,3 +1,5 @@
+var Room = require('../models/room');
+
 var ioEvents = function (io) {
     io.on('connection', function(socket) {
         console.log( 'Hello there' );
@@ -9,12 +11,9 @@ var ioEvents = function (io) {
         });
 
         socket.on('answerSubmit', function( data ) {
-            // here we want 
-                // the time
+            // here we want
                 // the display name
-                // answer
                 // question/slide ID
-            
             console.dir( data );
         });
 

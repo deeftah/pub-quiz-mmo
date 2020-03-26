@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var Mongoose = require('mongoose');
+var Schema = Mongoose.Schema;
 
 /*
 * round - a collection of slides (questions/info).
@@ -11,8 +11,8 @@ var Schema = mongoose.Schema;
 */
 
 var roundSchema = new Schema({
-    title: Text,
-    description: Text,
+    title: String,
+    description: String,
     slides : Array,
     roundTimeout: Number
 });
