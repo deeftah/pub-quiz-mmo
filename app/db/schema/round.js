@@ -13,7 +13,12 @@ var Schema = Mongoose.Schema;
 var roundSchema = new Schema({
     title: String,
     description: String,
-    slides : Array,
+    slides : [
+        {
+            type: Mongoose.Schema.Types.ObjectId,
+            ref: "slide"
+          }
+    ],
     roundTimeout: Number
 });
 

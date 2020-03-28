@@ -5,15 +5,18 @@ var router = express.Router();
 router.get( '/', ( req, res ) => {
     res.render( 'index' );
     // If user is in an active quiz
-        // Return them to the quiz
+        // Great
     // Else show quiz login
 } );
 
+
 router.get( '/quiz-master', ( req, res ) => {
+    res.render( 'admin' );
     // If user is already logged in
         // List the user's quizzes.
         // Show 'create a quiz' option.
-    // Else show quizmaster login form
+    // Else 
+        // show quizmaster login form
 } );
 
 router.get( '/quiz-master/room/:id', ( req, res ) => {
@@ -24,7 +27,8 @@ router.get( '/quiz-master/room/:id', ( req, res ) => {
                 // Show the room details.
             // No.
                 // Invalid room ID.
-    // Else show quizmaster login form
+    // Else 
+        // show quizmaster login form
 } );
 
 router.get( '/quiz-master/round/:id', ( req, res ) => {
@@ -35,7 +39,8 @@ router.get( '/quiz-master/round/:id', ( req, res ) => {
                 // Show the round details.
             // No.
                 // Invalid room ID.
-    // Else show quizmaster login form
+    // Else 
+        // show quizmaster login form
 } );
 
 router.get( '/quiz-master/slide/:id', ( req, res ) => {
@@ -46,26 +51,19 @@ router.get( '/quiz-master/slide/:id', ( req, res ) => {
                 // Show the slide details.
             // No.
                 // Invalid slide ID.
-    // Else show quizmaster login form
+    // Else 
+        // show quizmaster login form
 } );
 
-router.get( '/room/:id', ( req, res ) => {
-    var roomID = req.params.id;
-    res.render( 'room', { room: roomID } );
-    // If user is in an active quiz
-        // Great
-    // Else
-        // Does the ID exist?
-        // Look up in the DB.
-            // Yes
-                // Is the start time in the future?
-                    // Sorry. This hasn't started yet.
-                // Is the end time in the past?
-                    // Sorry. This quiz has ended.
-                // The quiz is active.
-                    // Join in.
-            // No
-                // Invalid room ID.
-} );
+// Handle 404
+router.use(function(req, res) {
+    res.status(400);
+    res.render('404');
+});
+
+// Handle 500
+router.use(function(error, req, res, next) {
+    res.send('500: Internal Server Error', 500);
+});
 
 module.exports = router;

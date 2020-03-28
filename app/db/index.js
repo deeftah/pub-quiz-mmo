@@ -16,6 +16,7 @@ Mongoose.Promise = global.Promise;
 module.exports = {
     Mongoose,
     models: {
+        quiz: require( './schema/quiz.js' ),
         room: require( './schema/room.js' ),
         round: require( './schema/round.js' ),
         session: require( './schema/session.js' ),
