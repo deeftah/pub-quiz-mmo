@@ -11,9 +11,9 @@ var Schema = Mongoose.Schema;
 * currentSlide - current position in the quiz.
 * occupants - number of people in the room. Used to calculate live number of players. Default: 0.
 * globalTimeout - time in seconds per question across the quiz. Default: 60.
-* startTime - epoch seconds when the room opens. Default is 0 (always open)
-* endTime - epoch seconds when the event ends. Default is 0 (always open)
 * scoring - when the scoring is done. Live, at the end of the round or the end of the quiz. Default: end-quiz.
+* startDate - date/time when the room opens. Default is when the record is added.
+* status - status of the quiz. Used to signify if a quiz has ended. Default is 'ready'
 */
 
 var roomSchema = new Schema({
@@ -30,9 +30,9 @@ var roomSchema = new Schema({
     },
     occupants: { type: Number, default: 0 },
     globalTimeout: { type: Number, default: 60 },
-    startTime : { type: Number, default: 0 },
-    endTime : { type: Number, default: 0 },
     scoring: { type: String, default: 'end-quiz' },
+    startDate : { type: Date, default: Date.now },
+    status: { type: String, default: 'ready' }
 });
 
 var roomModel = Mongoose.model( 'room', roomSchema );

@@ -5,6 +5,10 @@ var create = function( data, callback ) {
     newRoom.save(callback);
 }
 
+var find = function (data, callback){
+    roomModel.find(data, callback);
+}
+
 var findOne = function (data, callback){
 	roomModel.findOne(data, callback);
 }
@@ -15,6 +19,7 @@ var findById = function (id, callback){
 
 module.exports = {
     create,
+    find,
     findOne,
     findById
 }

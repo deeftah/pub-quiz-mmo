@@ -5,6 +5,10 @@ var create = function( data, callback ) {
     newRound.save(callback);
 }
 
+var find = function (data, callback){
+    roundModel.find(data, callback);
+}
+
 var findOne = function (data, callback){
 	roundModel.findOne(data, callback);
 }
@@ -15,6 +19,7 @@ var findById = function (id, callback){
 
 module.exports = {
     create,
+    find,
     findOne,
     findById
 }

@@ -8,6 +8,7 @@ var Schema = Mongoose.Schema;
 * description - explanation of the round.
 * slides - array of slides for the round in the order they are displayed.
 * roundTimeout - override the quiz timeout if set.
+* owner - user who created the round.
 */
 
 var roundSchema = new Schema({
@@ -19,7 +20,8 @@ var roundSchema = new Schema({
             ref: "slide"
           }
     ],
-    roundTimeout: Number
+    roundTimeout: Number,
+    owner: { type: String, default: 'admin' }
 });
 
 var roundModel = Mongoose.model( 'round', roundSchema );

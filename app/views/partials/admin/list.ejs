@@ -1,0 +1,9 @@
+<% if (listData.length > 0) { %>
+    <ul>
+        <% listData.forEach(function(listItem){ %>
+            <li><a href="/quiz-master/<%- listType -%>/<%- listItem.id -%>"><%= listItem.title -%></a></li>
+        <% }); %>
+    </ul>
+<% } else { %>
+    <p>No <%- listType -%> found.</p>
+<% } %>

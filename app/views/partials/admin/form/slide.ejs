@@ -1,0 +1,55 @@
+<form name="quiz-form" data-form="admin" data-form-type="slide">
+    <div class="form__status"></div>
+    <div class="form__field-container form__field-container--select">
+        <label for="slide-type">Slide type</label>
+        <select name="slide-type">
+            <option value="text">Text slide</option>
+            <option value="question">Question slide</option>
+        </select>
+    </div>
+
+    <div class="form__field-container form__field-container--select">
+        <label for="question-type">Answer type</label>
+        <select name="question-type">
+            <option value="question-type-text">Text box</option>
+            <option value="question-type-multiple-text">Multiple text boxes</option>
+            <option value="question-type-number">Number box</option>
+            <option value="question-type-multiple-choice">Multiple choice</option>
+        </select>
+    </div>
+
+    <div class="form__field-container form__field-container--input-text">
+        <label for="slide-text">Slide text</label>
+        <input name="slide-text" type="text" placeholder="Name a type of dog" required />
+    </div>
+
+    <div class="form__field-container form__field-container--input-text">
+        <label for="slide-subtext">Slide subtext</label>
+        <input name="slide-subtext" type="text" placeholder="Just name a type of dog" />
+    </div>
+
+    <div class="form__field-container form__field-container--input-text">
+        <label for="slide-options">Slide options</label>
+        <input name="slide-options" type="text" placeholder="Good dog" />
+        <input name="slide-options" type="text" placeholder="English setter" />
+        <input name="slide-options" type="text" placeholder="Clive" />
+    </div>
+
+    <div class="form__field-container form__field-container--input-text">
+        <label for="slide-answers">Slide answer</label>
+        <input name="slide-answers" type="text" placeholder="English setter" />
+    </div>
+
+    <div class="form__field-container form__field-container--input-text">
+        <label for="slide-score">Slide score</label>
+        <input name="slide-score" type="number" placeholder="1" />
+    </div>
+
+    <div class="form__field-container form__field-container--input-text">
+        <label for="slide-timeout">Slide timeout</label>
+        <input name="slide-timeout" type="number" placeholder="60" />
+    </div>
+    <div class="form__field-container form__field-container--submit">
+        <input type="submit" value="Submit">
+    </div>
+</form>
