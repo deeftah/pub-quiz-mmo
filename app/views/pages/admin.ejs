@@ -1,0 +1,10 @@
+<%- include ('../partials/base/header') %>
+    <div class="header">
+        <h1>Quiz Master</h1>
+    </div>
+    <div class="main">
+        <h4>Available quizzes</h4>
+        <%- include ('../partials/admin/list', { listData: quizzes, listType: 'quiz' }) %>
+        <%- include ('../partials/base/button', { buttonLink: '/quiz-master/quiz/new', buttonText: 'Add new quiz', buttonClass: 'new-quiz'}) %>
+    </div>
+<%- include ('../partials/base/footer') %>

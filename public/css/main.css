@@ -34,6 +34,18 @@ body {
     font-size: 1rem;
 }
 
+.form__status {
+    background-color: #ffeb3b;
+    color: #002171;
+    display: inline-block;
+}
+
+.form__status p {
+    padding: 0 1rem;
+    margin: 0.5rem 0;
+}
+
+
 .form__field-container {
     margin: 1rem 0;
 }
@@ -48,9 +60,16 @@ body {
     font-size: 20px;
 }
 
-.form__field-container input[type=submit] {
+.form__field-container input[type=submit], .button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
     background-color: #ffeb3b;
+    color: #002171;
+    text-decoration: none;
     border: 0;
     padding: 0.25rem 0.75rem;
     cursor: pointer;
+    font-size: 1rem;
 }

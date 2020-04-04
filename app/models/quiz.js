@@ -1,20 +1,20 @@
-var roomModel = require('../db').models.room;
+var quizModel = require('../db').models.quiz;
 
 var create = function( data, callback ) {
-    var newRoom = new roomModel(data);
-    newRoom.save(callback);
+    var newQuiz = new quizModel(data);
+    newQuiz.save(callback);
 }
 
 var find = function (data, callback){
-    roomModel.find(data, callback);
+    quizModel.find(data, callback);
 }
 
 var findOne = function (data, callback){
-	roomModel.findOne(data, callback);
+	quizModel.findOne(data, callback);
 }
 
 var findById = function (id, callback){
-	roomModel.findById(id, callback);
+	quizModel.findById(id, callback);
 }
 
 module.exports = {

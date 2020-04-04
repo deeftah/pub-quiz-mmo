@@ -1,20 +1,20 @@
-var roomModel = require('../db').models.room;
+var slideModel = require('../db').models.slide;
 
 var create = function( data, callback ) {
-    var newRoom = new roomModel(data);
-    newRoom.save(callback);
+    var newSlide = new slideModel(data);
+    newSlide.save(callback);
 }
 
 var find = function (data, callback){
-    roomModel.find(data, callback);
+    slideModel.find(data, callback);
 }
 
 var findOne = function (data, callback){
-	roomModel.findOne(data, callback);
+	slideModel.findOne(data, callback);
 }
 
 var findById = function (id, callback){
-	roomModel.findById(id, callback);
+	slideModel.findById(id, callback);
 }
 
 module.exports = {
@@ -22,4 +22,4 @@ module.exports = {
     find,
     findOne,
     findById
-}
+};

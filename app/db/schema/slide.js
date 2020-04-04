@@ -11,7 +11,7 @@ var Schema = Mongoose.Schema;
 * mediaURL - supporting image/video URL.
 * options - list of multiple choice options.
 * answers - list of possible correct answers.
-* points - score awarded for a correct answer (default = 1).
+* points - score awarded for a correct answer. No default as this could be a text slide.
 * slideTimeout - override the round/quiz timeout if set.
 */
 
@@ -23,7 +23,7 @@ var slideSchema = new Schema({
     mediaURL : String,
     options : { type: Array },
     answers : { type: Array },
-    points: { type: Number, default: 1 },
+    points: Number,
     slideTimeout: Number
 });
 

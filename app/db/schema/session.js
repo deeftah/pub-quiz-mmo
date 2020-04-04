@@ -4,17 +4,18 @@ var Schema = Mongoose.Schema;
 /*
 * session - an individual quiz participant.
 * 
-* code - used by participants to enter the room. This is unique while the room is open.
 * displayname - name of the participant(s)
-* slideCurrent - current position in the quiz
+* roomID - ID of the current room.
 * rankCurrent - current rank in the quiz
 * totalScore - current quiz score
 */
 
 var sessionSchema = new Schema({
-    code: String,
     displayName: String,
-    slideCurrent: { type: Number, default: 0 },
+    roomID: {
+        type: Mongoose.Schema.Types.ObjectId,
+        ref: "room"
+    },
     rankCurrent: { type: Number, default: 0 },
     totalScore: { type: Number, default: 0 },
 });

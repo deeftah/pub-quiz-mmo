@@ -1,0 +1,5 @@
+<ul>
+    <% listData.forEach(function(listItem){ %>
+        <li><a href="/quiz-master/round/<%- listItem.id -%>"><%= listItem.title -%></a></li>
+    <% }); %>
+</ul>

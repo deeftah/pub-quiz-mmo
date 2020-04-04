@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "node server.js",
+    "watch": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +25,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "mongoose": "^5.9.5",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.3.0",
+    "validate.js": "^0.13.1"
   }
 }

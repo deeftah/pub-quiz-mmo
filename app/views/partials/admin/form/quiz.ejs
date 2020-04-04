@@ -1,12 +1,12 @@
-<form name="user-form">
+<form name="quiz-form" data-form="admin" data-form-type="quiz">
     <div class="form__status"></div>
     <div class="form__field-container form__field-container--input-text">
-        <label for="user-name">Display name</label>
-        <input name="user-name" type="text" placeholder="Agatha Quizteam" required />
+        <label for="quiz-name">Quiz name</label>
+        <input name="quiz-name" type="text" placeholder="My cool quiz" required />
     </div>
     <div class="form__field-container form__field-container--input-text">
-        <label for="user-name">Room code</label>
-        <input name="user-room" type="text" placeholder="e.g. NRVQ" required />
+        <label for="quiz-timeout">Global timeout</label>
+        <input name="quiz-timeout" type="number" placeholder="60" required />
     </div>
     <div class="form__field-container form__field-container--submit">
         <input type="submit" value="Submit">

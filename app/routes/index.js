@@ -1,19 +1,51 @@
 var express = require('express');
 var router = express.Router();
+var Mongoose = require('mongoose');
+
+var Quiz = require('../models/quiz');
+var Round = require('../models/round');
 
 // Home
 router.get( '/', ( req, res ) => {
-    res.render( 'index' );
+    res.render( 'pages/index' );
     // If user is in an active quiz
-        // Return them to the quiz
+        // Great
     // Else show quiz login
 } );
 
+
 router.get( '/quiz-master', ( req, res ) => {
+    var quizList;
+
+    Quiz.find({}, (err, quizzes) => {
+        if ( quizzes ) {
+            res.render( 'pages/admin', { 'quizzes': quizzes } );
+        }
+    });
+
     // If user is already logged in
         // List the user's quizzes.
         // Show 'create a quiz' option.
-    // Else show quizmaster login form
+    // Else 
+        // show quizmaster login form
+} );
+
+router.get( '/quiz-master/quiz/new', ( req, res ) => {
+    res.render( 'pages/admin/new/quiz' );
+} );
+
+router.get( '/quiz-master/quiz/:id', ( req, res ) => {
+    Quiz.findById( req.params.id , (err, quiz) => {
+        if ( quiz ) {
+            res.render( 'pages/admin/section/quiz', { 'quiz': quiz } );
+        } else {
+            res.render( 'pages/404' );
+        }
+    });
+} );
+
+router.get( '/quiz-master/room/new', ( req, res ) => {
+    res.render( 'pages/admin/new/room' );
 } );
 
 router.get( '/quiz-master/room/:id', ( req, res ) => {
@@ -24,7 +56,12 @@ router.get( '/quiz-master/room/:id', ( req, res ) => {
                 // Show the room details.
             // No.
                 // Invalid room ID.
-    // Else show quizmaster login form
+    // Else 
+        // show quizmaster login form
+} );
+
+router.get( '/quiz-master/round/new', ( req, res ) => {
+    res.render( 'pages/admin/new/round' );
 } );
 
 router.get( '/quiz-master/round/:id', ( req, res ) => {
@@ -35,7 +72,12 @@ router.get( '/quiz-master/round/:id', ( req, res ) => {
                 // Show the round details.
             // No.
                 // Invalid room ID.
-    // Else show quizmaster login form
+    // Else 
+        // show quizmaster login form
+} );
+
+router.get( '/quiz-master/slide/new', ( req, res ) => {
+    res.render( 'pages/admin/new/slide' );
 } );
 
 router.get( '/quiz-master/slide/:id', ( req, res ) => {
@@ -46,26 +88,14 @@ router.get( '/quiz-master/slide/:id', ( req, res ) => {
                 // Show the slide details.
             // No.
                 // Invalid slide ID.
-    // Else show quizmaster login form
+    // Else 
+        // show quizmaster login form
 } );
 
-router.get( '/room/:id', ( req, res ) => {
-    var roomID = req.params.id;
-    res.render( 'room', { room: roomID } );
-    // If user is in an active quiz
-        // Great
-    // Else
-        // Does the ID exist?
-        // Look up in the DB.
-            // Yes
-                // Is the start time in the future?
-                    // Sorry. This hasn't started yet.
-                // Is the end time in the past?
-                    // Sorry. This quiz has ended.
-                // The quiz is active.
-                    // Join in.
-            // No
-                // Invalid room ID.
-} );
+// Handle 404
+router.use(function(req, res) {
+    res.status(400);
+    res.render('pages/404');
+});
 
 module.exports = router;

@@ -1,0 +1,16 @@
+<%- include ('../../../partials/base/header') %>
+    <div class="header">
+        <h1><%= quiz.title -%></h1>
+    </div>
+    <div class="main">
+        <h4>Owner</h4>
+        <p><%= quiz.owner -%></p>
+        <h4>Question timeout</h4>
+        <p><%= quiz.globalTimeout -%></p>
+        <h4>Quiz rounds</h4>
+        <div class="round-list">
+            <%- include ('../../../partials/admin/list', { listData: [], listType: 'round' }) %>
+        </div>
+        <%- include ('../../../partials/base/button', { buttonLink: '/quiz-master/round/new', buttonText: 'Add new round', buttonClass: 'new-round'}) %>
+    </div>
+<%- include ('../../../partials/base/footer') %>

@@ -7,7 +7,7 @@ var sockets = require('./app/sockets')(app);
 app.set('views', __dirname + '/app/views');
 app.set('view engine', 'ejs');
 
-app.use('/', routes);
 app.use(express.static('public'));
+app.use('/', routes);
 
 sockets.listen(3000);
