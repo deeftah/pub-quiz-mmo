@@ -3,7 +3,6 @@ var router = express.Router();
 var Mongoose = require('mongoose');
 
 var Quiz = require('../models/quiz');
-var Round = require('../models/round');
 
 // Home
 router.get( '/', ( req, res ) => {
@@ -54,22 +53,6 @@ router.get( '/quiz-master/room/:id', ( req, res ) => {
         // Is the ID valid?
             // Yes.
                 // Show the room details.
-            // No.
-                // Invalid room ID.
-    // Else 
-        // show quizmaster login form
-} );
-
-router.get( '/quiz-master/round/new', ( req, res ) => {
-    res.render( 'pages/admin/new/round' );
-} );
-
-router.get( '/quiz-master/round/:id', ( req, res ) => {
-    var roundID = req.params.id;
-    // If user is already logged in
-        // Is the ID valid?
-            // Yes.
-                // Show the round details.
             // No.
                 // Invalid room ID.
     // Else 

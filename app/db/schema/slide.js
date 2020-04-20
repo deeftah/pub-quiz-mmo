@@ -12,7 +12,7 @@ var Schema = Mongoose.Schema;
 * options - list of multiple choice options.
 * answers - list of possible correct answers.
 * points - score awarded for a correct answer. No default as this could be a text slide.
-* slideTimeout - override the round/quiz timeout if set.
+* slideTimeout - override the quiz timeout if set.
 */
 
 var slideSchema = new Schema({

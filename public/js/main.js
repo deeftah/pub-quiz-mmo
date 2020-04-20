@@ -51,7 +51,7 @@ window.addEventListener("load",function() {
     let answerForm = document.getElementsByName('answer-form');
     let adminForm = document.querySelector('[data-form="admin"]');
 
-    if ( adminForm.length > 0 ) {
+    if ( adminForm && adminForm.length > 0 ) {
         adminForm.addEventListener("submit", function(e) {
             e.preventDefault();
             let submissionData = {};
@@ -60,13 +60,6 @@ window.addEventListener("load",function() {
                 submissionData = {
                     title: e.target.querySelector('[name=quiz-name]').value,
                     globalTimeout : Number(e.target.querySelector('[name=quiz-timeout]').value),
-                    owner: 'admin'
-                };
-            } else if ( adminForm.dataset.formType === 'round' ) {
-                submissionData = {
-                    title: e.target.querySelector('[name=round-name]').value,
-                    description: e.target.querySelector('[name=round-description]').value,
-                    roundTimeout : Number(e.target.querySelector('[name=round-timeout]').value),
                     owner: 'admin'
                 };
             } else if ( adminForm.dataset.formType === 'slide' ) {

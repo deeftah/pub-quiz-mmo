@@ -6,8 +6,6 @@ A way of creating and playing pub quizzes remotely.
 
 An admin section allows admin users to create a full quiz.
 
-A quiz is split into rounds. A round is a collection of questions.
-
 Questions are text - with accompanying media - that have a correct answer, or multiple correct answers. Points can be awarded to each question.
 
 Answer types include:
@@ -16,7 +14,7 @@ Answer types include:
 
 Timers can be set for a question. This can be individually or globally across a quiz.
 
-Non quiz rounds, such as introductions, breaks and outros are also options. These display information but do not have questions attached. Display information can include free text, images and/or a countdown.
+Non answer slides, such as introductions, breaks and outros are also options. These display information but do not have questions attached. Display information can include free text, images and/or a countdown.
 
 Questions and answers will be stored, so a quiz can run at a later date, or repeated. The administrator will be able to delete a quiz.
 
@@ -28,7 +26,7 @@ This will generate a unique code for the quiz. This can be sent to participants.
 
 ### Question master
 
-The question master view will be able to view the round/question list.
+The question master view will be able to view the question list.
 
 They will be able to see all the answered questions and their answers per person/team.
 
@@ -56,7 +54,7 @@ Participants will be able to rejoin their session. Anyone entering after the fir
 
 ### Answers
 
-The question master can determine whether the answers will be handled live, or after the fact. Answers handled after can either be at the end of a round, or at the end of the quiz.
+The question master can determine whether the answers will be handled live, or after the fact. Answers handled after can be handled on any non answer slide.
 
 Live reveals will award points immediately after a question is complete. This will allow for a live scoreboard, with live updates on how participants are performing. It can also display how many people got a correct answer.
 

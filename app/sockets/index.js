@@ -2,7 +2,6 @@ let validate = require('validate.js');
 
 var Quiz = require('../models/quiz');
 var Room = require('../models/room');
-var Round = require('../models/round');
 var Slide = require('../models/slide');
 
 const currentDate = new Date;
@@ -23,7 +22,13 @@ var ioEvents = function (io) {
                 }
                 
                 if ( room ) {
-                    // check if someone with the same username is already in the room
+                    // is the room open?
+                    if ( room.status === 'closed' ) {
+                        socket.emit( 'roomValidation', { error: 'This room is closed' } );
+                        return;
+                    }
+                     
+                    // does someone in the room have the same username?
 
                     console.dir(room);
 
@@ -58,16 +63,6 @@ var ioEvents = function (io) {
                         response = { error: 'Your quiz name already exists' };
                     } else {
                         Quiz.create( data.submissionData );
-                    }
-
-                    socket.emit( 'adminFormValidation', response );
-                });
-            } else if ( data.formType === 'round' ) {
-                Round.findOne({ $and: [ { "title": data.submissionData.title }, { "owner": data.submissionData.owner } ] }, (err, round) => {
-                    if ( round ) {
-                        response = { error: 'Your round name already exists' };
-                    } else {
-                        Round.create( data.submissionData );
                     }
 
                     socket.emit( 'adminFormValidation', response );
@@ -117,9 +112,6 @@ var ioEvents = function (io) {
                     let quizDate = new Date(data.submissionData.startDate);
                     let endDate = quizDate.setDate( quizDate.getDate() + 1 );
                     let endDateISO = new Date( endDate ).toISOString();
-
-                    console.dir( startDateISO );
-                    console.dir( endDateISO );
 
                     Room.findOne({ $and: [ { "code" : data.submissionData.code }, { "startDate" : { "$gte" : startDateISO, "$lte" : endDateISO } } ] }, (err, room) => {                        
                         if ( room ) {
